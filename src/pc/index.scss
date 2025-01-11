@@ -1,0 +1,169 @@
+// pc specific variables
+$viewport-max-width: 1200px;
+$btn-border-radius: 4px;
+$header-height: 60px;
+$scrollbar-width: 8px;
+/* this comment keeps track of the current maximum z-index. Change this comment if a need for an even greater z-index arrives and update the component next to it with the one that will have the higher z-index. ! Do not set it to an absurdly high value that gets difficult to keep track of (like 99999) ! */
+// cur-max-z-index: 25; notification
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--clr-scrollbar-thumb) var(--clr-scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+	width: $scrollbar-width;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--clr-scrollbar-thumb);
+}
+
+*::-webkit-scrollbar-track {
+	background-color: var(--clr-scrollbar-track);
+}
+
+.page-container {
+	min-height: 100vh;
+	background: var(--clr-background);
+	color: var(--clr-text);
+	position: relative;
+}
+
+.primary-button {
+	color: #ffffff;
+	background-color: var(--clr-primary);
+	border: 1px solid var(--clr-primary);
+	border-radius: $btn-border-radius;
+	padding: 8px;
+	font-weight: 600;
+
+	&:hover {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+			var(--clr-primary);
+	}
+
+	&:disabled {
+		background: rgba(var(--clr-secondary-values), 0.06);
+		color: rgba(var(--clr-secondary-values), 0.34);
+		border-color: transparent;
+		cursor: not-allowed;
+	}
+}
+
+.secondary-button {
+	color: var(--clr-primary);
+	font-weight: 600;
+	padding: 8px;
+	border-radius: $btn-border-radius;
+	border: 1px solid var(--clr-primary);
+
+	&:hover {
+		background-color: rgba(var(--clr-primary-values), 0.06);
+	}
+}
+
+.info-button {
+	color: rgba(var(--clr-secondary-values), 0.8);
+	font-weight: 600;
+	font-size: 1rem;
+	padding: 8px;
+	border-radius: $btn-border-radius;
+	border: 1px solid var(--clr-text);
+
+	&:hover {
+		background-color: rgba(var(--clr-secondary-values), 0.06);
+	}
+}
+
+.hoverable {
+	cursor: pointer;
+	transition: background-color 0.25s ease-out;
+
+	&:hover {
+		background-color: rgba(var(--clr-secondary-values), 0.03);
+	}
+}
+
+.follow-btn {
+	button {
+		border: 1px solid var(--clr-primary);
+		border-radius: $btn-border-radius;
+		padding: 2px 16px;
+		color: var(--clr-primary);
+		font-size: 0.9rem;
+		font-weight: 500;
+
+		&:hover {
+			background-color: rgba(var(--clr-primary-values), 0.06);
+		}
+
+		&.info-button {
+			color: rgba(var(--clr-secondary-values), 0.8);
+			border-color: rgba(var(--clr-secondary-values), 0.8);
+
+			&:hover {
+				background-color: rgba(var(--clr-secondary-values), 0.06);
+			}
+		}
+	}
+}
+
+.tags {
+	font-size: 0.85rem;
+	font-weight: 600;
+
+	span:hover,
+	a:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+.action-btn-container.liked {
+	.action-btn {
+		background: var(--clr-primary);
+
+		i {
+			color: #fff;
+		}
+	}
+}
+
+.clickable {
+	cursor: pointer;
+	user-select: none;
+}
+
+.scrolled-all {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 4px;
+	margin: 48px 0;
+
+	span {
+		font-weight: 600;
+		font-size: 1.1rem;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.infinite-scroll-div {
+	overflow: unset !important;
+}
+
+.clamp-text {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-moz-box-orient: vertical;
+	word-break: break-word;
+}

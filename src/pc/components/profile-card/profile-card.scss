@@ -1,0 +1,24 @@
+$card-width: 196px;
+$card-height: 260px;
+
+.profile-card {
+	width: $card-width;
+	height: $card-height;
+
+	.video-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		overflow: hidden;
+
+		video {
+			background: #000;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+	}
+}

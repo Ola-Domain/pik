@@ -1,0 +1,106 @@
+@import "../../index.scss";
+
+$profile-pic-size: 56px;
+$video-player-height: calc(450px + (100vw - 768px) / 1152 * 100);
+
+.app-video-card {
+	display: flex;
+	gap: 16px;
+	padding: 32px 8px 32px 0;
+	border-bottom: 2px solid var(--clr-border);
+
+	.profile-pic {
+		display: block;
+		position: relative;
+		align-self: flex-start;
+
+		.rounded-photo {
+			width: $profile-pic-size;
+			height: $profile-pic-size;
+		}
+	}
+
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		header {
+			display: flex;
+			gap: 6px;
+			height: 24px;
+
+			.username {
+				font-weight: 700;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			h5 {
+				font-size: 0.75rem;
+			}
+
+			.uploader {
+				display: flex;
+				align-items: baseline;
+				gap: 4px;
+			}
+		}
+
+		.caption {
+			font-size: 0.9rem;
+		}
+
+		.tags {
+			margin-top: 2px;
+		}
+
+		.music {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			font-size: 0.85rem;
+			font-weight: 500;
+			margin-top: 4px;
+			margin-bottom: 12px;
+		}
+
+		.card-video {
+			display: flex;
+			gap: 16px;
+
+			.video-container {
+				position: relative;
+				border-radius: 8px;
+				overflow: hidden;
+				height: $video-player-height;
+
+				video {
+					width: 100%;
+					height: 100%;
+					cursor: pointer;
+					object-fit: contain;
+					background-color: #000;
+				}
+			}
+
+			.action-buttons {
+				display: flex;
+				align-self: flex-end;
+				flex-direction: column;
+				gap: 8px;
+
+				.action-btn-container {
+					flex-direction: column;
+				}
+			}
+		}
+	}
+
+	.follow-btn {
+		margin-left: auto;
+	}
+}

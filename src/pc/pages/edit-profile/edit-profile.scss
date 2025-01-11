@@ -1,0 +1,105 @@
+.edit-profile-container {
+	.card {
+		background: var(--clr-bg-elevation-1, var(--clr-background));
+		box-shadow: var(--shadows, var(--clr-shadow) 0px 2px 8px);
+		border-radius: 8px;
+		margin-top: 16px;
+		margin-bottom: 24px;
+		padding: 24px 56px 36px;
+
+		header {
+			h1 {
+				font-size: 1.4rem;
+				font-weight: 600;
+			}
+
+			h4 {
+				margin-top: 4px;
+				color: rgba(var(--clr-secondary-values), 0.6);
+			}
+		}
+
+		.card-body {
+			margin-top: 20px;
+
+			.rounded-photo {
+				width: 160px;
+				height: 160px;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 28px;
+
+				.form-group {
+					display: flex;
+					align-items: center;
+
+					.data {
+						display: flex;
+						align-items: center;
+						margin-left: auto;
+						max-width: 30%;
+
+						p {
+							font-weight: 600;
+						}
+					}
+
+					.edit {
+						color: var(--clr-primary);
+						margin-left: 8px;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+
+					.passwords {
+						flex-direction: column;
+						gap: 16px;
+					}
+				}
+
+				.pfp {
+					flex-direction: column;
+					gap: 8px;
+					margin: 24px;
+
+					input {
+						display: none;
+					}
+
+					img {
+						transition: opacity 0.15s ease-out;
+
+						&:hover {
+							opacity: 0.5;
+						}
+					}
+				}
+
+				.buttons {
+					display: flex;
+					gap: 12px;
+					margin-top: 20px;
+					align-self: center;
+
+					button {
+						width: 120px;
+					}
+
+					.info-button {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+
+	.save-spinner {
+		--circle-size: 12px;
+		--wrapper-padding: 0;
+	}
+}

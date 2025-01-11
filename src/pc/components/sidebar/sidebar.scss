@@ -1,0 +1,142 @@
+@import "../../index.scss";
+
+$sidebar-width: 356px;
+$box-padding: 16px 6px;
+$header-color: rgba(var(--clr-secondary-values), 0.75);
+$account-box-height: 80px;
+$account-pfp-size: 38px;
+$bg-transition: background-color 0.25s ease-out;
+
+.sidebar-wrapper {
+	width: $sidebar-width;
+}
+
+.app-sidebar {
+	position: fixed;
+	top: $header-height;
+	bottom: 0;
+	overscroll-behavior-y: contain;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	background: var(--clr-background);
+	width: $sidebar-width;
+	padding-right: 8px;
+	padding-bottom: 24px;
+	margin: 4px 0;
+
+	nav {
+		display: flex;
+		padding: $box-padding;
+		padding-bottom: 12px;
+		flex-direction: column;
+		font-size: 1.12rem;
+		font-weight: 600;
+		border-bottom: 2px solid var(--clr-border);
+
+		.nav-link {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			padding: 12px 8px;
+			border-radius: $btn-border-radius;
+
+			&.active {
+				color: var(--clr-primary);
+			}
+
+			i {
+				font-size: 1.3rem;
+			}
+		}
+	}
+
+	.log-in {
+		display: flex;
+		padding: $box-padding;
+		padding-bottom: 20px;
+		flex-direction: column;
+		gap: 22px;
+		color: rgba(var(--clr-secondary-values), 0.5);
+		border-bottom: 2px solid var(--clr-border);
+		font-size: 0.9rem;
+	}
+
+	.suggested,
+	.following {
+		padding: $box-padding;
+		display: flex;
+		flex-direction: column;
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			font-size: 0.98rem;
+			font-weight: 500;
+			color: $header-color;
+			margin-bottom: 12px;
+		}
+
+		.see-all {
+			color: var(--clr-primary);
+			font-weight: 500;
+			margin-top: 8px;
+			font-size: 0.78rem;
+		}
+
+		.accounts {
+			display: flex;
+			flex-direction: column;
+			height: $account-box-height;
+			height: 100%;
+
+			.account-details {
+				padding: 8px 0;
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				height: 100%;
+				border-radius: $btn-border-radius;
+			}
+
+			.rounded-photo {
+				height: $account-pfp-size;
+				width: $account-pfp-size;
+			}
+
+			.name-container {
+				h5 {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+	.following {
+		border-top: 2px solid var(--clr-border);
+		border-bottom: 2px solid var(--clr-border);
+	}
+
+	.spinner {
+		--circle-size: 12px;
+	}
+
+	.no-following {
+		font-size: 0.8rem;
+		color: rgba(var(--clr-secondary-values), 0.75);
+		font-weight: 300;
+	}
+
+	.made-with {
+		margin-top: 20px;
+		font-size: 0.75rem;
+		text-align: center;
+		color: rgba(var(--clr-secondary-values), 0.7);
+
+		a {
+			text-decoration: underline;
+		}
+	}
+}
